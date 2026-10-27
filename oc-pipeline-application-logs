@@ -1,0 +1,15 @@
+[2024-10-24 15:15:30 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2024-10-24 15:15:30 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2024-10-24 15:15:30 +0000] [1] [INFO] Using worker: sync
+[2024-10-24 15:15:31 +0000] [7] [INFO] Booting worker with pid: 7
+[2024-10-24 15:15:31 +0000] [7] [INFO] Initializing Customer Accounts Microservice...
+[2024-10-24 15:15:32 +0000] [7] [INFO] Connecting to database at postgresql://user:password@accounts-db:5432/accounts...
+[2024-10-24 15:15:32 +0000] [7] [INFO] Database tables verified and migrations applied successfully.
+[2024-10-24 15:15:33 +0000] [7] [INFO] Service routes registered: [/health, /accounts, /accounts/<id>, /]
+[2024-10-24 15:15:34 +0000] [7] [INFO] SERVICERUNNING - Application is live and serving requests on port 8000
+10.128.2.1 - - [24/Oct/2024:15:16:01 +0000] "GET /health HTTP/1.1" 200 28 "-" "kube-probe/1.25"
+10.128.2.1 - - [24/Oct/2024:15:16:11 +0000] "GET /health HTTP/1.1" 200 28 "-" "kube-probe/1.25"
+10.128.2.15 - - [24/Oct/2024:15:16:30 +0000] "POST /accounts HTTP/1.1" 201 215 "-" "curl/7.79.1"
+10.128.2.15 - - [24/Oct/2024:15:16:32 +0000] "GET /accounts HTTP/1.1" 200 428 "-" "Mozilla/5.0"
+10.128.2.15 - - [24/Oct/2024:15:16:45 +0000] "GET /accounts/1 HTTP/1.1" 200 215 "-" "Mozilla/5.0"
+10.128.2.1 - - [24/Oct/2024:15:17:01 +0000] "GET /health HTTP/1.1" 200 28 "-" "kube-probe/1.25"
